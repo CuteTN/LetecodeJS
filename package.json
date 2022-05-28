@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "nodemon --quiet app.js",
+    "install": "npm i -g nodemon",
+    "problem": "node ./core/setup.js",
+    "clean-up": "rm -rf ./current ./problems"
+  }
+}
