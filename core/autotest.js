@@ -8,6 +8,7 @@ export function runTests(
     ENABLE_TYPE_CHECK,
     TERMINATE_ON_FAIL,
     customCheckEqual,
+    customMapInput,
   }
 ) {
   function defaultCheckEqual(value1, value2) {
@@ -44,9 +45,13 @@ export function runTests(
 
     for (let i=0; i<testcases.length; i++) {
       const testcase = testcases[i];
+      const input = customMapInput?
+        customMapInput(testcase.input)
+        :
+        testcase.input
 
       const startTime = performance.now();
-      const actualOutput = solution(...testcase.input);
+      const actualOutput = solution(...(input ?? []));
       const endTime = performance.now();
 
       const isEqual = customCheckEqual? 

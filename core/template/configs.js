@@ -10,3 +10,8 @@ export const TERMINATE_ON_FAIL = true;
 export const customCheckEqual = (expOut, actOut, defaultCheckEqual) => {
   return defaultCheckEqual(expOut, actOut);
 };
+
+/** @type MapInputFunctionType */
+export const customMapInput = (testcaseInput) => {
+  return testcaseInput
+}

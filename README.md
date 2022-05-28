@@ -35,7 +35,7 @@ Also, if you don't know how to open a terminal or don't even know what the heck 
 
 All of your problems solution would be stored in a folder named **problems**. Each problem consists of 3 files:
 
-- **configs.js**: a bunch of options to manipulate the behavior of the tool, you can even rewrite how to judge a testcase be rewriting the function **customCheckEqual** here.
+- **configs.js**: a bunch of options to manipulate the behavior of the tool. You can rewrite how to judge a testcase be rewriting the function **customCheckEqual**. For some problems, such as [this](https://leetcode.com/problems/add-two-numbers/), requires the solution to take input in a special form, which can be achieved by rewriting the function **customMapInput**.
 - **solution.js**: your solution function. When starting a new problem, you can grab the whole Leetcode's template and put to this file, just remember to export default the function.
 - **testcases.js**: sample testcases or custom testcases. Each testcase has 2 fields: **1) `input`**, which has to be an array, contains arguments to pass in your solution function; **2) `output`**: the expected output for the given input, this value is gonna be used to test your IQ.
 
