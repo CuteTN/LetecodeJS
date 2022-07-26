@@ -38,8 +38,6 @@ export function runTests(
     return false;  
   }
 
-  console.clear();
-
   if (typeof solution === "function") {
     let allPassed = true;
 

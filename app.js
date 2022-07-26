@@ -1,6 +1,6 @@
 import fs from 'fs'
 import { runTests } from './core/autotest.js'
-import { openVsCode, runSetUp } from './core/setup.js';
+import { kitsCore } from './core/globals.js';
 
 function main() {
   console.clear();
@@ -34,6 +34,8 @@ function main() {
     import(`./problems/${problemId}/testcases.js`),
   ])
     .then(([configs, solution, { testcases }]) => {
+      // console.clear();
+      kitsCore.executeTasks();
       runTests(problemId, solution.default, testcases, configs)
     })
     .catch(error => {

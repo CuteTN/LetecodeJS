@@ -1,5 +1,5 @@
 /**
- * @typedef {{ input: any[], output: any }} TestCaseType
+ * @typedef {{ id?: number, input: any[], output: any }} TestCaseType
  */
 
 /**
