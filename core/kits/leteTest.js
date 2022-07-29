@@ -1,7 +1,7 @@
-import { getCallerIndexRange, removeCallerCode, replaceCallerCodeWithBlank } from "../core/utils/callerHelper.js";
+import { getCallerIndexRange } from "../utils/callerHelper.js";
 import path from 'path'
 import fs from 'fs'
-import { kitsCore } from "../core/globals.js";
+import { kitsCore } from "../globals.js";
 
 /**
  * @param {number} id
@@ -58,5 +58,4 @@ export function leteTest(id, input, output) {
       replaceWith: "",
     }
   })
-
 }

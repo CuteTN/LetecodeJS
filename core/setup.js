@@ -3,7 +3,7 @@ import { exec } from 'child_process'
 import path from 'path'
 
 const dirProblems = './problems';
-const dirCurrent = './current';
+const dirCurrent = './userdata/current';
 const dirTemplate = './core/template';
 
 

@@ -9,7 +9,7 @@ function main() {
   let currentProblem = null;
   
   try {
-    currentProblem = JSON.parse(fs.readFileSync('./current/problem.json'));
+    currentProblem = JSON.parse(fs.readFileSync('./userdata/current/problem.json'));
   }
   catch(error) {
     console.error("Cannot read current problem data.");
