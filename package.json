@@ -1,9 +1,10 @@
 {
   "type": "module",
   "scripts": {
-    "start": "nodemon --quiet --delay 0.5 app.js",
+    "start": "node ./runInitialization.js && nodemon --quiet --delay 0.5 app.js",
     "install": "npm i -g nodemon",
     "problem": "node ./runSetupProblem.js",
-    "clean-up": "rm -rf './problems' && echo {} > ./userdata/current/problem.json"
+    "clean-up": "rm -rf './problems' && echo {} > ./userdata/current/problem.json",
+    "commit-libs": "node ./runCommitLibs.js"
   }
 }
