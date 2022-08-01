@@ -60,6 +60,14 @@ class DependenciesTracer {
 }
 
 /**
+ * 😼 Summary: **letePick** lets you grab a piece of code from your personal library instead of reaching the source code by yourself.  
+ * 😼 Usage: call **letePick** from your *solution* file. After the call, the caller code should be replaced by the requested piece of code automatically.  
+ * 😼 Usage: create a new file in *userlibs* folder to create a new ***library***. In the file, you should export everything that you would need to copy later (and please, do NOT export default). vars, classes and functions are supported. However there are constrains on the syntax:  
+ *    - functions: it is highly recommended that you use the syntax `function funcName() {}` for declaring functions.  
+ *    - classes: it is also recommended that you use the syntax `class className {}` for declaring classes.  
+ *    - vars: you can declare your data with either *const*, *let*, *var*. But the tool will see all of them as "*var*"s.  
+ * After making changes on libraries, you need to re-run the tool with `npm start` to commit those new changes to the tool.  
+ * 
  * @param {import("../../userdata/libs.js").LibIdsType[]} ids
  */
 export function letePick(...ids) {

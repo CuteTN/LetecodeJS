@@ -4,6 +4,9 @@ import fs from 'fs'
 import { kitsCore } from "../globals.js";
 
 /**
+ * 😼 Summary: **leteTest** lets you add a new testcase without having to switch to the testcases file.  
+ * 😼 Usage: call **leteTest** from your *solution* file. After the call, a new testcase would be added, then the caller code should be removed automatically.  
+ * 
  * @param {number} id
  * @param {any[]} input 
  * @param {any} output 
