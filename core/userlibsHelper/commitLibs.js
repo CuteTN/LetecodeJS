@@ -6,11 +6,12 @@ import { convertImportablePath } from '../utils/stringHelper.js';
  * @typedef {"var" | "class" | "function"} LibItemTypeType
  * 
  * @typedef {Object} LibItemType
+ * @property {string} id
  * @property {string} name
  * @property {LibItemTypeType} type
  * @property {string} script
  * @property {string} fileName
- * @property {string} id
+ * @property {string} dependencyIds
  */
 
 /**
@@ -28,13 +29,14 @@ function getItemDetails(fileName, itemName, itemValue) {
       type = "function";
     if (script.startsWith("class"))
       type = "class"
-    
+
     return { 
       name: itemName, 
       script,
       type, 
       id,
       fileName,
+      dependencyIds: itemValue?._leteChain,
     }
   }
 
@@ -79,12 +81,12 @@ export async function convertLibsScriptToData(libsPath) {
  * @param {Object<string, LibItemType>} libsData 
  */
 export function commitLibsData(libsData) {
-  const libsDataContent = "export const libsData = " + JSON.stringify(libsData, null, 2);
+  const libsDataContent = "export const libsData = " + JSON.stringify(libsData);
 
   const ids = Object.keys(libsData);
 
-  const idAsString = ids.map(id => `"${id}"`).join(' | \r\n');
-  const libsIdsTypeContent = `/** @typedef {\r\n${idAsString}\r\n} LibIdsType */`
+  const idAsString = ids.map(id => `"${id}"`).join('|');
+  const libsIdsTypeContent = `/** @typedef {${idAsString}} LibIdsType */`
 
   const content = [libsDataContent, libsIdsTypeContent].join('\r\n');
   fs.writeFileSync('./userdata/libs.js', content);
